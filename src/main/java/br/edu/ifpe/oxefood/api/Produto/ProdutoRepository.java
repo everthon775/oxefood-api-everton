@@ -1,5 +1,6 @@
-package br.edu.ifpe.oxefood.api.Produto;
+package br.edu.ifpe.oxefood.api.produto;
 
-public class ProdutoRepository {
-    
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 }
