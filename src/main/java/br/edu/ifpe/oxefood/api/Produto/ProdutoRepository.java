@@ -1,4 +1,4 @@
-package br.edu.ifpe.oxefood.api.produto;
+package br.edu.ifpe.oxefood.api.Produto;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

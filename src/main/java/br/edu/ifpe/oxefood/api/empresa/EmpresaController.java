@@ -9,12 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/empresas")
 public class EmpresaController {
 
-    @Autowired
-    private EmpresaService service;
+  
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public EmpresaDTO salvar(@RequestBody EmpresaDTO dto) {
-        return service.salvar(dto);
+       
     }
 }

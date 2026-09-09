@@ -1,19 +1,25 @@
 package br.edu.ifpe.oxefood.api.empresa;
 
-import br.edu.ifpe.oxefood.util.EntidadeAuditable;
+import br.edu.ifpe.oxefood.util.EntidadeAuditavel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import org.hibernate.annotations.SQLRestriction;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
+@Table(name = "cliente")
+@SQLRestriction("habilitado = true")
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Empresa extends EntidadeAuditable {
+public class Empresa extends EntidadeAuditavel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

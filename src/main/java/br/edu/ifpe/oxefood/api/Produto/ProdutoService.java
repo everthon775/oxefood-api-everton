@@ -1,13 +1,12 @@
-package br.edu.ifpe.oxefood.api.produto;
+package br.edu.ifpe.oxefood.api.Produto;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class ProdutoService {
 
-    @Autowired
-    private ProdutoRepository repository;
+  
 
     public ProdutoDTO salvar(ProdutoDTO dto) {
 
@@ -20,7 +19,7 @@ public class ProdutoService {
         produto.setTempoEntregaMinimo(dto.getTempoEntregaMinimo());
         produto.setTempoEntregaMaximo(dto.getTempoEntregaMaximo());
 
-        produto = repository.save(produto);
+        
 
         dto.setId(produto.getId());
 

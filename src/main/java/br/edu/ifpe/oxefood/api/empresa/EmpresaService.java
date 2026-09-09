@@ -1,12 +1,12 @@
 package br.edu.ifpe.oxefood.api.empresa;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmpresaService {
 
-    @Autowired
+    
     private EmpresaRepository repository;
 
     public EmpresaDTO salvar(EmpresaDTO dto) {
