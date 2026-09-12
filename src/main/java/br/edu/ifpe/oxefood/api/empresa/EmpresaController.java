@@ -1,19 +1,27 @@
 
 package br.edu.ifpe.oxefood.api.empresa;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResquestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/empresas")
+@RequestMapping("/api/empresa")
 public class EmpresaController {
+    private final EmpresaService empresaService;
 
-  
+    public EmpresaController(EmpresaService service){
+        this.empresaService = service;
+    }
+
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public EmpresaDTO salvar(@RequestBody EmpresaDTO dto) {
-       
+    public ResponseEntity<Empresa> cadastrar(@RequestBody EmpresaDTO dto){
+
+        Empresa empresaCadastrado = empresaService.cadastrar(dto);
+        return ResponseEntity.status(Https.CREATED).body(empresaCadastrado);
     }
 }

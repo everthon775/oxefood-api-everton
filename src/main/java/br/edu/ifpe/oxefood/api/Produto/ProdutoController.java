@@ -7,14 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.edu.ifpe.oxefood.api.cliente.Cliente;
-import br.edu.ifpe.oxefood.api.cliente.ClienteDTO;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/Produtos")
+@RequestMapping("/api/Produtos")
 public class ProdutoController {
 
     
