@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResquestMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,6 +22,6 @@ public class EmpresaController {
     public ResponseEntity<Empresa> cadastrar(@RequestBody EmpresaDTO dto){
 
         Empresa empresaCadastrado = empresaService.cadastrar(dto);
-        return ResponseEntity.status(Https.CREATED).body(empresaCadastrado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(empresaCadastrado);
     }
 }

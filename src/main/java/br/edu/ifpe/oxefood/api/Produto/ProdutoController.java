@@ -13,15 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProdutoController {
 
     
-    private final ProdutoService ProdutoService;
+    private final ProdutoService produtoService;
 
-
+    public ProdutoController(ProdutoService service){
+        this.produtoService = service;
+    }
      
     @PostMapping
     public ResponseEntity<Produto> cadastrar(@RequestBody ProdutoDTO dto) {
 
-        Cliente clienteCadastrado = ProdutoService.cadastrar(dto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(ProdutoCadastrado);
+        Produto produtoCadastrado = produtoService.cadastrar(dto);
+        
+        return ResponseEntity.status(HttpStatus.CREATED).body(produtoCadastrado);
     }
 
 
