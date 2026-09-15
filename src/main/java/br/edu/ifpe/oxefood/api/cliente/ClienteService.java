@@ -33,4 +33,19 @@ public class ClienteService {
         cliente.setHabilitado(true);
         return repository.save(cliente);
     }
+
+     public List<Cliente> listar() {
+
+        return repository.findAll();
+    }
+
+    public Cliente buscarPorId(Long id) {
+
+        return repository.findById(id).get();
+    }
+
+
+
+
+
 }
