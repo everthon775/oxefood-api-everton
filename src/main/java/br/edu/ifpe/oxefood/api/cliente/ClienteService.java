@@ -1,6 +1,8 @@
 package br.edu.ifpe.oxefood.api.cliente;
 
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
