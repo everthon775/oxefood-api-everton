@@ -1,8 +1,11 @@
 package br.edu.ifpe.oxefood.api.empresa;
 
-import java.util.List;
+
 
 import org.springframework.stereotype.Service;
+
+
+
 
 import jakarta.transaction.Transactional;
 
@@ -41,4 +44,14 @@ public class EmpresaService {
         empresa.setHabilitado(true);
         return repository.save(empresa);
     }
+
+    @Transactional
+     public void remover(Long id) {
+
+        Empresa empresa = repository.findById(id).get();
+        empresa.setHabilitado(false);
+
+     }
+
+
 }

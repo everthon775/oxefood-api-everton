@@ -1,7 +1,7 @@
 
 package br.edu.ifpe.oxefood.api.empresa;
 
-import java.util.List;
+
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,4 +26,6 @@ public class EmpresaController {
         Empresa empresaCadastrado = empresaService.cadastrar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(empresaCadastrado);
     }
+
+    
 }

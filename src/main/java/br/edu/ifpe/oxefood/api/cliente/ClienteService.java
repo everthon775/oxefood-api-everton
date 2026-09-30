@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
 
+
+
 @Service
 public class ClienteService {
 
@@ -16,7 +18,23 @@ public class ClienteService {
        this.repository = repository;
     }
 
+    
+
     public Cliente build(ClienteDTO dto) {
+
+        Cliente cliente = null;
+
+      if (dto.getId() == null) { //Montado para o cadastro
+
+         cliente = new Cliente();
+
+      } else { //Consultado para a alteração
+
+         cliente = repository.findById(dto.getId()).get();
+      }
+
+
+
 
         Cliente cliente = new Cliente();
         cliente.setNome(dto.getNome());
@@ -28,6 +46,8 @@ public class ClienteService {
         return cliente;
     }
 
+    
+
     @Transactional
     public Cliente cadastrar(ClienteDTO dto) {
 
@@ -35,6 +55,15 @@ public class ClienteService {
         cliente.setHabilitado(true);
         return repository.save(cliente);
     }
+
+    
+    @Transactional
+    public Cliente atualizar(ClienteDTO dto) {
+
+        Cliente cliente = build(dto);
+        return repository.save(cliente);
+        }
+
 
      public List<Cliente> listar() {
 
@@ -46,6 +75,14 @@ public class ClienteService {
         return repository.findById(id).get();
     }
 
+     @Transactional
+     public void remover(Long id) {
+
+        Cliente cliente = repository.findById(id).get();
+        cliente.setHabilitado(false);
+
+        repository.save(cliente);
+   }
 
 
 
