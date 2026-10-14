@@ -42,6 +42,9 @@ public abstract class EntidadeAuditavel extends EntidadeNegocio {
     @Column
     private Long ultimaModificacaoPor; // Id do usuário que fez a última alteração
 
+    
+
+
 
 
 }

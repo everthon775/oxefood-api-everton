@@ -36,7 +36,6 @@ public class ClienteService {
 
 
 
-        Cliente cliente = new Cliente();
         cliente.setNome(dto.getNome());
         cliente.setDataNascimento(dto.getDataNascimento());
         cliente.setCpf(dto.getCpf());
