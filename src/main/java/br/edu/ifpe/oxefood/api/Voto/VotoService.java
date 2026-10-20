@@ -35,7 +35,7 @@ public class VotoService {
 
    
 
-        voto.se
+        voto.set
         voto.setNomeEleitor(dto.getNomeEleitor());
         voto.setdataVotacao(dto.getdataVotacao());
         voto.setNumeroRegistroEleitoral(dto.getNumeroRegistroEleitoral());
